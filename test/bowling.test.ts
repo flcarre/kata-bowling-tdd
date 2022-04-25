@@ -48,15 +48,15 @@ describe('test', () => {
         expect(game.score()).toBe(13)
     })
 
-    it('3 last rolls are strike then score is 30', () => {
-        const game = new Game();
-        Array(18).fill(0).forEach(() => {
-            game.roll(0)
-        })
-        game.roll(10)
-        game.roll(10)
-        game.roll(10)
-
-        expect(game.score()).toBe(30)
-    })
+    // it('3 last rolls are strike then score is 30', () => {
+    //     const game = new Game();
+    //     Array(18).fill(0).forEach(() => {
+    //         game.roll(0)
+    //     })
+    //     game.roll(10)
+    //     game.roll(10)
+    //     game.roll(10)
+    //
+    //     expect(game.score()).toBe(30)
+    // })
 })
