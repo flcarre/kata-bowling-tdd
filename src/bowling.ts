@@ -1,13 +1,14 @@
 export class Game {
-    pinsKnocked: Array<number> = [];
+    pinsKnocked: Array<Frame> = [];
 
     score(): number {
         if (this.pinsKnocked.length === 12) return 300;
 
 
         return this.pinsKnocked.reduce((sum, current, index) => {
-            if (current === 10)
-                return sum + current + this.pinsKnocked[index + 1] + this.pinsKnocked[index + 2]
+            if (current === 10) {
+              return sum + current + this.pinsKnocked[index + 1] + this.pinsKnocked[index + 2]
+            }
 
             if (index % 2 !== 0 && current + this.pinsKnocked[index - 1] === 10)
                 return sum + current + this.pinsKnocked[index + 1]
@@ -20,3 +21,6 @@ export class Game {
         this.pinsKnocked.push(pinsKnocked);
     }
 }
+
+
+type Frame = Array<number>
