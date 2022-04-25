@@ -1,11 +1,11 @@
 export class Game {
-    let totalScore: number = 0;
+    pinsKnocked: Array<number> = [];
 
     score(): number {
-        return 0q
+        return this.pinsKnocked.reduce((previous, current) => previous + current, 0);
     }
 
     roll(pinsKnocked: number) {
-
+      this.pinsKnocked.push(pinsKnocked);
     }
 }
