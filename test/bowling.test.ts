@@ -16,4 +16,23 @@ describe('test', () =>{
         })
         expect(game.score()).toBe(20)
     })
+
+    it("perfect game with 12 strike should return 300", () => {
+        const game = new Game();
+        Array(12).fill(0).forEach(() => {
+            game.roll(10)
+        })
+        expect(game.score()).toBe(300)
+    })
+
+    it("the first roll is a strike, then only hit 1 pins the next roll", () => {
+        const game = new Game();
+        game.roll(10);
+        game.roll(1)
+        game.roll(1)
+        Array(16).fill(0).forEach(() => {
+            game.roll(0)
+        })
+        expect(game.score()).toBe(14)
+    })
 })
